@@ -1,0 +1,118 @@
+---
+title: "How Long Will I Live? A Linear Mixed Effects Analysis of Factors Influencing Life Expectancy in Developing Countries"
+#subtitle: "Supplementary Results"
+author: 
+- Amos O. Okutse
+#- Jon A. Steingrimsson
+- Monica Colon-Vargas
+# date: "  `r format(Sys.time(), '%d %B, %Y')` "
+abstract: |
+header-includes:
+- \usepackage{pdflscape}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+- \usepackage{fvextra}
+- \usepackage{float}
+- \usepackage{wrapfig}
+- \usepackage{amsmath}
+- \usepackage{amssymb}
+- \usepackage{threeparttable} %used to fix table with notes
+- \usepackage{float}
+- \usepackage{graphicx}
+- \usepackage{microtype}
+- \usepackage{setspace}
+- \usepackage[font=singlespacing]{caption} #can change font here for captions here!!
+- \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines, commandchars=\\\{\}}
+- \singlespacing
+fontsize: 10pt
+output:
+  bookdown::pdf_document2:
+    latex_engine: xelatex
+    toc: false
+    toc_depth: 4
+    number_sections: false
+    keep_md: false
+link-citations: yes
+colorlinks: yes
+linkcolor: blue
+urlcolor: blue
+bibliography: bibfile.bib
+#csl: sage-vancouver-brackets.csl
+---
+```{r include=FALSE}
+knitr::opts_chunk$set(
+echo = FALSE,
+cache = FALSE,
+message = FALSE,
+warning = FALSE,
+fig.align = 'center',
+fig.pos = 'H',
+dpi = 350,
+tidy.opts = list(width.cutoff = 80, tidy = TRUE)
+)
+```
+
+# Introduction
+
+Life expectancy is a key indicator of human health and development and a major determinant of the quality and quantity of life. However, life expectancy varies widely across and within countries, reflecting the complex interplay of biological, environmental, social, and behavioral factors influencing mortality and morbidity. Understanding the factors that affect life expectancy and how they differ across countries is crucial for designing and evaluating effective and equitable public health policies and interventions that can improve health outcomes and reduce health disparities.
+
+Studying factors associated with life expectancy in different countries is not a new topic. This is an active and evolving research area as new data, methods, and challenges emerge. For example, the COVID-19 pandemic highlighted the importance and limitations of life expectancy as a measure of health and the need to account for the direct and indirect effects of pandemics on mortality and morbidity. Moreover, the availability and quality of data on life expectancy and its determinants vary across countries and require careful harmonization and adjustment to ensure comparability and validity. The methods and models used to analyze life expectancy and its factors need to be robust and flexible and able to handle the heterogeneity, nonlinearity, and multicollinearity of the data.
+
+This study aims to contribute to the existing literature on life expectancy and its associated determinants by using novel and rigorous methods and data to address some of the current gaps and challenges in the field. Specifically, we employ linear mixed-effects methods (LMM) to model determinants of life expectancy in the developing world. We conduct sensitivity analyses and compare the performance of the fitted LMM to a fixed-effect linear model based on ordinary least squares estimation. 
+
+# Methods
+
+## Data and variables
+
+- Source of data and basic characteristics
+
+- Dependent and explanatory variables (Table listing)
+
+- What informed choice of explanatory variables?
+
+## Statistical modeling
+
+### Linear and linear mixed effects model (LMM)
+Denote $\mathbf{Y_i} = (y_{m_i,i}, \cdots, y_{m_i, i})^T$ be an $m_i$-dimensional vector of repeated responses for the $i^{th}$ (independent) individual, $\mathbf{X_i}$ and $\mathbf{Z_i}$ be $m_i \times p$ and $m_i \times q$-dimensional vector of covariates, respectively, and $\mathbf{\beta}$ be a $p$-dimensional vector of fixed effects. The standard LMM is then [@ariyo2022model]
+
+\begin{align}
+\begin{split}
+\mathbf{Y_i} & = \boldsymbol{\beta}\mathbf{X_i} + \mathbf{b}_i \mathbf{Z_i} + \boldsymbol{\epsilon}_i, \; (i = 1, \cdots, n) \\
+\epsilon_i & \sim N_{m_i}(0, \boldsymbol{\Sigma}_i)
+\end{split}
+\label{eq:eqn-one}
+\end{align}
+where $\boldsymbol{\epsilon}_i$ is the residual vector and $\boldsymbol{\Sigma_i}$ is $m_i \times m_i$ positive definite (p.d) covariance matrix. 
+
+The $q \times 1$ vector of random effects, $\mathbf{b_i} \sim N_q(0, \mathbf{D})$ where $\mathbf{D}$ denotes the $q \times q$ p.d covariance matrix. The classical LMM represented by Equation (\ref{eq:eqn-one}) combines fixed effects $\boldsymbol{\beta}$ with the subject specific random effects $\mathbf{b_i}, \cdots, \mathbf{b_n}$ and inference might be focused on the regression coefficients, $\boldsymbol{\beta}$, the subject-specific coefficients, $\mathbf{b_i}$, or the variance-covariance structure, $\boldsymbol{\Sigma_i}$ and $\mathbf{D}$. This is in contrast to a linear model defined as in Equation (\ref{eq:eqn-two}) that assumes the subject-specific coefficients $\mathbf{b_i}$.
+
+\begin{align}
+\begin{split}
+\mathbf{Y_i} &= \boldsymbol{\beta}\mathbf{X_i} + \boldsymbol{\epsilon_i}, \; (i = 1, \cdots, n)\\
+\epsilon & \sim N_{m_i}(0, \boldsymbol{\Sigma_i})
+\label{eq:eqn-two}
+\end{split}
+\end{align}
+
+### Model specifications
+
+- See Roffia et al for specification of the OLS model and justification for its use!
+
+
+- See Ariyo 2019 for LME version and Lin 
+
+What are the specific forms of the fitted models? Why?
+
+## Sensitivity analysis
+
+
+
+## Model selection
+
+
+# Results and discussion
+
+
+
+# References
+<div id="refs"></div>
